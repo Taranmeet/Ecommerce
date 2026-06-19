@@ -15,6 +15,12 @@ pipeline {
             }
         }
 
+	stage('Prepare') {
+	    steps {
+        	sh 'chmod +x ./gradlew'
+    		}
+	}
+
         stage('Lint') {
             steps {
                 sh './gradlew lint'
